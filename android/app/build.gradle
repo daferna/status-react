@@ -358,6 +358,8 @@ dependencies {
     implementation 'com.github.status-im:function:0.0.1'
     implementation 'com.facebook.fresco:fresco:2.2.0'
     implementation 'com.facebook.fresco:animated-gif:2.2.0'
+    implementation project(':react-native-notifications')
+    implementation 'com.google.firebase:firebase-core:16.0.0'
 }
 
 def getLocalNDKDir = { ->
@@ -393,3 +395,4 @@ task hemroidBuild(type: Exec) {
 preBuild.dependsOn hemroidBuild
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
+apply plugin: "com.google.gms.google-services"
